@@ -1,3 +1,1 @@
-set PATH /usr/local/var/rbenv/shims /usr/local/sbin /usr/local/bin /usr/sbin/ /usr/bin /sbin/ /bin /opt/X11/bin $HOME/mybin
-set RBENV_ROOT /usr/local/var/rbenv
-
+set PATH /usr/local/sbin /usr/local/bin /usr/sbin/ /usr/bin /sbin/ /bin $HOME/mybin
