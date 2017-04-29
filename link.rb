@@ -26,11 +26,13 @@ end
 
 if __FILE__ == $0
   link 'config.fish', '~/.config/fish/'
+  link 'peco.config.json', '~/.config/peco/config.json'
   link 'fish/fishfile', '~/.config/fish/'
   link '.gemrc'
   link '.gitconfig'
   link '.tmux.conf'
   link 'init.vim', '~/.config/nvim/init.vim'
+  link 'vim/ftplugin', '~/.config/nvim/'
   if RUBY_PLATFORM =~ /darwin\d/
     link 'fish/fishd.705681ae6dbb', '~/.config/fish/', :hard
     link 'osx/private.xml', '~/Library/Application Support/Karabiner/'

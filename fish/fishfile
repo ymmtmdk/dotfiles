@@ -1,15 +1,11 @@
 ymmtmdk/autocdz
 ymmtmdk/autoll
-fisherman/await
-edc/bass
 oh-my-fish/theme-bobthefish
 ymmtmdk/bobthefish_color
 ymmtmdk/colored_man
-fisherman/fzf
-fisherman/get
 fisherman/getopts
-fisherman/last_job_id
 ymmtmdk/peco_kill
 ymmtmdk/peco_select_history
+ymmtmdk/peco_select_history_with_c
 ymmtmdk/peco_tmux_pane
-ymmtmdk/z_jump
+ymmtmdk/z

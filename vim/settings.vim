@@ -17,8 +17,16 @@ set autoread
 set undodir=~/.config/nvim/undo
 set undofile
 set sh=fish
+set title
+set showtabline=2
+set nobackup
+set autochdir
 
-tnoremap <silent> <ESC> <C-\><C-n>
+" show whitespaces
+set list
+set listchars=tab:>.,trail:_,extends:>,precedes:<,nbsp:%
+
+let g:terminal_scrollback_buffer_size = 2000
 
 let g:gitgutter_signs = 0
 
@@ -30,94 +38,6 @@ let g:auto_save_silent = 1
 " Use deoplete.
 let g:deoplete#enable_at_startup = 1
 
-" Plugin key-mappings.
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
-
-" SuperTab like snippets behavior.
-"imap <expr><TAB>
-" \ pumvisible() ? "\<C-n>" :
-" \ neosnippet#expandable_or_jumpable() ?
-" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-
-" For conceal markers.
-if has('conceal')
-  set conceallevel=2 concealcursor=niv
-endif
-
-function DeleteHiddenBuffers()
-    let tpbl=[]
-    call map(range(1, tabpagenr('$')), 'extend(tpbl, tabpagebuflist(v:val))')
-    for buf in filter(range(1, bufnr('$')), 'bufexists(v:val) && index(tpbl, v:val)==-1')
-        silent execute 'bwipeout' buf
-    endfor
-endfunction
-
-"タブ、空白、改行の可視化
-set list
-set listchars=tab:>.,trail:_,extends:>,precedes:<,nbsp:%
-
-"全角スペースをハイライト表示
-function! ZenkakuSpace()
-  highlight ZenkakuSpace cterm=reverse ctermfg=DarkMagenta gui=reverse guifg=DarkMagenta
-endfunction
-
-if has('syntax')
-  augroup ZenkakuSpace
-    autocmd!
-    autocmd ColorScheme       * call ZenkakuSpace()
-    autocmd VimEnter,WinEnter * match ZenkakuSpace /　/
-  augroup END
-  " call ZenkakuSpace()
-endif
-
-" map <silent> <F3> :call BufferList()<CR>
-" for InsertLeave
-inoremap <C-C> <Esc>
-nnoremap <silent> <F13> :b 1 <CR>
-nnoremap <silent> <F14> :b 2 <CR>
-nnoremap <silent> <F15> :b 3 <CR>
-nnoremap <silent> <F16> :b 4 <CR>
-nnoremap <silent> <F17> :b 5 <CR>
-nnoremap <silent> <F18> :b 6 <CR>
-nnoremap <silent> <F19> :b 7 <CR>
-nnoremap <silent> <F20> :b 8 <CR>
-
-inoremap <C-Z> <C-O>:suspend<cr>
-nnoremap <C-Z> :w<cr>:suspend<cr>
-
-cnoremap <C-p> <Up>
-cnoremap <C-n> <Down>
-
-nnoremap <F5> :UndotreeToggle<cr>
-
-nnoremap k gk
-nnoremap gk k
-nnoremap j gj
-nnoremap gj j
-
-" for crontab -e
-autocmd BufEnter /private/tmp/crontab.* setl backupcopy=yes
-autocmd FocusLost *.rb,*.js,*.html normal mugg=G`u
-autocmd BufWritePre * FixWhitespace
-autocmd Filetype * setlocal formatoptions-=ro
-
-autocmd bufnewfile,bufread *.scpt,*.applescript :setl filetype=applescript
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-augroup Vimrc
-  autocmd!
-  autocmd InsertLeave * call <SID>auto_save()
-  function! s:auto_save()
-    if filewritable(expand('%'))
-      write
-    endif
-  endfunction
-augroup END
-
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
@@ -127,4 +47,113 @@ let g:syntastic_typescript_tsc_args = "--experimentalDecorators --target ES5"
 let g:syntastic_typescript_tsc_args = "--target ES5"
 let g:syntastic_typescript_checkers = ['tslint', 'tsc']
 
+" Plugin key-mappings.
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
+xmap <C-k> <Plug>(neosnippet_expand_target)
+
+" SuperTab like snippets behavior.
+"imap <expr><TAB>
+" \ pumvisible() ? "\<C-n>" :
+" \ neosnippet#expandable_or_jumpable() ?
+" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+" tnoremap <silent> <ESC> <C-\><C-n>
+tnoremap <silent> <C-t><C-[> <C-\><C-n>
+tnoremap <silent> <F1> <C-[>OP
+tnoremap <silent> <F2> <C-[>OQ
+tnoremap <silent> <F3> <C-[>OR
+tnoremap <silent> <F4> <C-[>OS
+tnoremap <silent> <F5> <C-[>[15~
+tnoremap <silent> <F6> <C-[>[17~
+tnoremap <silent> <F7> <C-[>[18~
+tnoremap <silent> <F8> <C-[>[19~
+tnoremap <silent> <F9> <C-[>[20~
+tnoremap <silent> <F10> <C-[>[21~
+tnoremap <silent> <F11> <C-[>[23~
+tnoremap <silent> <F12> <C-[>[24~
+tnoremap <silent> <F13> <C-\><C-n>1gt
+tnoremap <silent> <F14> <C-\><C-n>2gt
+tnoremap <silent> <F15> <C-\><C-n>3gt
+tnoremap <silent> <F16> <C-\><C-n>4gt
+tnoremap <silent> <F17> <C-\><C-n>5gt
+" tnoremap <C-t><C-n> <C-\><C-n>:!nexttab<cr>
+" tnoremap <C-t>n <C-\><C-n>:!nexttab<cr>
+
+inoremap <C-C> <Esc>
+nnoremap <silent> <F13> 1gt
+nnoremap <silent> <F14> 2gt
+nnoremap <silent> <F15> 3gt
+nnoremap <silent> <F16> 4gt
+nnoremap <silent> <F17> 5gt
+nnoremap <silent> <F18> 6gt
+nnoremap <silent> <F19> 7gt
+nnoremap <silent> <F20> 8gt
+
+inoremap <C-Z> <C-O>1gt
+nnoremap <C-Z> 1gt
+
+cnoremap <C-a> <Home>
+cnoremap <C-d> <Del>
+cnoremap <C-e> <End>
+cnoremap <C-b> <Left>
+cnoremap <C-f> <Right>
+cnoremap <C-n> <Down>
+cnoremap <C-p> <Up>
+
+cmap <C-s> <Plug>(cmdlineplus-forward-word)<C-w>
+cmap <F1> <Plug>(cmdlineplus-backward-word)
+cmap <F2> <Plug>(cmdlineplus-forward-word)
+
+nnoremap <C-k> d$
+
+nnoremap <F5> :UndotreeToggle<cr>
+nnoremap <C-s><C-o> :Texplore<cr>
+
+nnoremap k gk
+nnoremap gk k
+nnoremap j gj
+nnoremap gj j
+
+" set titlestring=%{$TERM_TITLE}
+
+function! TermTitleString()
+  if exists('b:term_title')
+    return b:term_title
+  else
+    return expand("%:t")
+  endif
+endfunction
+
+augroup Vimrc
+  function! s:weak_save()
+    if filewritable(expand('%'))
+      write
+    endif
+  endfunction
+
+  autocmd!
+
+  " for crontab -e
+  autocmd BufEnter /private/tmp/crontab.* setl backupcopy=yes
+  autocmd FocusLost *.rb,*.js normal mugg=G`u
+  autocmd FocusGained * checktime
+  autocmd TabEnter * checktime
+
+  autocmd TabEnter term://* startinsert
+
+  autocmd TabNew * setlocal titlestring=%{TermTitleString()}
+  autocmd TermOpen * setlocal titlestring=%{TermTitleString()}
+  autocmd TabEnter term://* setlocal titlestring=%{TermTitleString()}
+  autocmd TabLeave term://* setlocal titlestring=%{TermTitleString()}
+  autocmd TabLeave * call s:weak_save()
+
+  autocmd BufWritePre * FixWhitespace
+  autocmd Filetype * setlocal formatoptions-=ro
+  autocmd InsertLeave * call s:weak_save()
+augroup END
+
 source ~/dotfiles/vim/lightline-conf.vim
+
