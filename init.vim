@@ -46,6 +46,7 @@ if dein#load_state(s:dein_dir)
   call dein#add('itchyny/lightline.vim')
   call dein#add('airblade/vim-gitgutter')
   call dein#add('tpope/vim-fugitive')
+  call dein#add('cohama/agit.vim')
   call dein#add('honza/vim-snippets')
 
   call dein#add('Shougo/vinarise.vim')

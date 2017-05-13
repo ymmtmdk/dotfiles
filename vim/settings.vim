@@ -1,5 +1,6 @@
 autocmd ColorScheme * highlight Normal ctermbg=none
 autocmd ColorScheme * highlight LineNr ctermbg=none
+autocmd ColorScheme * highlight NonText ctermfg=234 ctermbg=none
 
 colorscheme beekai
 

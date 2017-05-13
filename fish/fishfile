@@ -2,10 +2,11 @@ ymmtmdk/autocdz
 ymmtmdk/autoll
 oh-my-fish/theme-bobthefish
 ymmtmdk/bobthefish_color
-ymmtmdk/colored_man
+decors/fish-colored-man
+ymmtmdk/file_exists_in_tree
 fisherman/getopts
+ymmtmdk/implicit_bundle_exec
 ymmtmdk/peco_kill
-ymmtmdk/peco_select_history
+ymmtmdk/peco_nvimbuf
 ymmtmdk/peco_select_history_with_c
-ymmtmdk/peco_tmux_pane
-ymmtmdk/z
+ymmtmdk/z-rb
