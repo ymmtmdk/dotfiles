@@ -130,7 +130,7 @@ endfunction
 
 augroup Vimrc
   function! s:weak_save()
-    if filewritable(expand('%'))
+    if filewritable(expand('%')) && &modified
       write
     endif
   endfunction

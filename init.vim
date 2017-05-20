@@ -64,6 +64,8 @@ if dein#load_state(s:dein_dir)
   call dein#add('rhysd/vim-crystal')
   call dein#add('leafgarland/typescript-vim')
   call dein#add('fatih/vim-go')
+  call dein#add('udalov/kotlin-vim')
+
   " Required:
   call dein#end()
   call dein#save_state()
