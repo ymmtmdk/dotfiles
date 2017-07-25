@@ -2,6 +2,9 @@ set -x TERM xterm-256color
 set -x EDITOR (which nvim)
 set -x SHELL (which fish)
 
+set -g theme_display_git_untracked yes
+set -g theme_avoid_ambiguous_glyphs yes
+
 function fish_title
   if [ $SSH_CONNECTION ]
     echo "$USER@"(hostname)": "

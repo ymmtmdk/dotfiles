@@ -29,13 +29,12 @@ if __FILE__ == $0
   link 'peco.config.json', '~/.config/peco/config.json'
   link 'fish/fishfile', '~/.config/fish/'
   link '.gemrc'
-  link '.gitconfig'
-  link '.tmux.conf'
+  link '.gitconfig', '~/.config/git/config'
   link 'init.vim', '~/.config/nvim/init.vim'
   link 'vim/ftplugin', '~/.config/nvim/'
   if RUBY_PLATFORM =~ /darwin\d/
+    link 'karabiner.json', '~/.config/karabiner/'
     link 'fish/fishd.705681ae6dbb', '~/.config/fish/', :hard
-    link 'osx/private.xml', '~/Library/Application Support/Karabiner/'
     link 'osx/com.googlecode.iterm2.plist', '~/Library/Preferences/'
     link 'osx/mongod.conf', '/usr/local/etc/'
   end

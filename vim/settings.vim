@@ -1,6 +1,8 @@
 autocmd ColorScheme * highlight Normal ctermbg=none
 autocmd ColorScheme * highlight LineNr ctermbg=none
 autocmd ColorScheme * highlight NonText ctermfg=234 ctermbg=none
+autocmd BufRead,BufNewFile *.conf setfiletype conf
+autocmd FileType vue syntax sync fromstart
 
 colorscheme beekai
 
@@ -20,8 +22,9 @@ set undofile
 set sh=fish
 set title
 set showtabline=2
-set nobackup
 set autochdir
+set nobackup
+set backupskip+=/private/tmp/*
 
 " show whitespaces
 set list
@@ -33,7 +36,7 @@ let g:gitgutter_signs = 0
 
 let g:auto_save = 1
 let g:auto_save_no_updatetime = 1  " do not change the 'updatetime' option
-set updatetime=1000
+set updatetime=700
 let g:auto_save_in_insert_mode = 0  " do not save while in insert mode
 let g:auto_save_silent = 1
 " Use deoplete.
@@ -84,6 +87,7 @@ tnoremap <silent> <F17> <C-\><C-n>5gt
 " tnoremap <C-t>n <C-\><C-n>:!nexttab<cr>
 
 inoremap <C-C> <Esc>
+inoremap <C-D> <Del>
 nnoremap <silent> <F13> 1gt
 nnoremap <silent> <F14> 2gt
 nnoremap <silent> <F15> 3gt
@@ -118,8 +122,6 @@ nnoremap gk k
 nnoremap j gj
 nnoremap gj j
 
-" set titlestring=%{$TERM_TITLE}
-
 function! TermTitleString()
   if exists('b:term_title')
     return b:term_title
@@ -137,9 +139,7 @@ augroup Vimrc
 
   autocmd!
 
-  " for crontab -e
-  autocmd BufEnter /private/tmp/crontab.* setl backupcopy=yes
-  autocmd FocusLost *.rb,*.js normal mugg=G`u
+  " autocmd FocusLost *.rb,*.js normal mugg=G`u
   autocmd FocusGained * checktime
   autocmd TabEnter * checktime
 

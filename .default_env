@@ -1,4 +1,4 @@
-set -x PATH /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin $HOME/mybin
+set -x PATH /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin $HOME/code/mybin # $HOME/.cargo/bin
 
 if not set -x -q NVIM_LISTEN_ADDRESS
   set -x NVIM_LISTEN_ADDRESS (mktemp -d)/nvim.sock

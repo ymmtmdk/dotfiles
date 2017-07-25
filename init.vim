@@ -24,6 +24,7 @@ if dein#load_state(s:dein_dir)
   call dein#add('Shougo/deoplete.nvim')
   " call dein#add('Shougo/denite.nvim')
 
+  call dein#add('thinca/vim-localrc')
   call dein#add('flazz/vim-colorschemes')
   call dein#add('felixhummel/setcolors.vim')
 
@@ -65,6 +66,7 @@ if dein#load_state(s:dein_dir)
   call dein#add('leafgarland/typescript-vim')
   call dein#add('fatih/vim-go')
   call dein#add('udalov/kotlin-vim')
+  call dein#add('posva/vim-vue')
 
   " Required:
   call dein#end()
