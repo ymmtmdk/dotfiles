@@ -1,1 +1,4 @@
-source ~/dotfiles/osx/osx.fish
+if test (uname) = Darwin
+  source ~/dotfiles/osx/osx.fish
+end
+
