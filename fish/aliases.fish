@@ -1,8 +1,13 @@
 alias e='nvim'
 alias r='ruby'
-# alias g='git'
-alias g='hub'
+
+if which hub > /dev/null
+  alias g='hub'
+else
+  alias g='git'
+end
 alias d='docker'
+
 alias ll='ls -lAh'
 alias df='df -m'
 
