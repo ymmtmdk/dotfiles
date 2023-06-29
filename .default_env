@@ -6,3 +6,10 @@ end
 
 set -x CFLAGS "$CFLAGS -I/usr/local/include"
 set -x CXXFLAGS "$CXXFLAGS -I/usr/local/include"
+set -gx LDFLAGS "-L/usr/local/opt/ruby/lib"
+set -gx CPPFLAGS "-I/usr/local/opt/ruby/include"
+set -gx PKG_CONFIG_PATH "/usr/local/opt/ruby/lib/pkgconfig"
+
+# set -gx XDG_DATA_HOME ~/.nvm
+# source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.inc"
+

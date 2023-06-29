@@ -96,9 +96,10 @@ nnoremap <silent> <F17> 5gt
 nnoremap <silent> <F18> 6gt
 nnoremap <silent> <F19> 7gt
 nnoremap <silent> <F20> 8gt
+nnoremap <C-t> :tabnew<Space>
 
-inoremap <C-Z> <C-O>1gt
-nnoremap <C-Z> 1gt
+" inoremap <C-Z> <C-O>1gt
+" nnoremap <C-Z> 1gt
 
 cnoremap <C-a> <Home>
 cnoremap <C-d> <Del>
