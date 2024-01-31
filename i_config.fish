@@ -6,29 +6,24 @@ set -g theme_display_git_untracked yes
 set -g theme_avoid_ambiguous_glyphs yes
 set -g fish_user_paths "/usr/local/opt/ruby/bin" $fish_user_paths
 
-function fish_title
-  if [ $SSH_CONNECTION ]
-    echo "$USER@"(hostname)": "
-  end
-  prompt_pwd
-end
-
 source ~/dotfiles/fish/aliases.fish
 source ~/dotfiles/fish/each_arch.fish
 
 function fish_user_key_bindings
   # C-^
   bind \x1e 'cd ..; and commandline -f repaint'
-  # C-<
+  # C-,
   bind -k f1 prevd-or-backward-word
-  # C->
+  # C-.
   bind -k f2 nextd-or-forward-word
+
   bind \cd delete-char
   bind \cs forward-kill-word
   bind \cs kill-word
   bind \cr 'peco_select_history_with_c (commandline)'
   # bind \cx 'peco_kill (commandline)'
   # bind \cq 'peco_nvimbuf (commandline)'
+  bind \cm current_info
 end
 
 # autocdz
@@ -46,11 +41,7 @@ function __fish_command_not_found_handler --on-event fish_command_not_found
   autocdz $argv
 end
 
-function fish_user_key_bindings
-  bind \cm done_enter
-end
-
-function done_enter
+function current_info
   if test -z (commandline)
     ll
     if git rev-parse --is-inside-work-tree > /dev/null 2>&1
@@ -65,5 +56,4 @@ function done_enter
   # 入力をクリアする
   commandline -f repaint
 end
-
 
