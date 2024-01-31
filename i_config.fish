@@ -57,3 +57,6 @@ function current_info
   commandline -f repaint
 end
 
+function fish_title
+end
+
