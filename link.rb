@@ -33,7 +33,7 @@ if __FILE__ == $0
   link 'nvim/init.lua', '~/.config/nvim/init.lua'
   link 'nvim/lua', '~/.config/nvim/'
   if RUBY_PLATFORM =~ /darwin\d/
-    link 'karabiner.json', '~/.config/karabiner/', :hard
+    link 'karabiner.json', '~/.config/karabiner/'
     link 'fish/fishd.705681ae6dbb', '~/.config/fish/', :hard
   end
 end
