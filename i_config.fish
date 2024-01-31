@@ -46,10 +46,24 @@ function __fish_command_not_found_handler --on-event fish_command_not_found
   autocdz $argv
 end
 
-# autoll
-# function on_fish_postexec --on-event fish_postexec
-#   if test -z $argv
-#     ll
-#   end
-# end
+function fish_user_key_bindings
+  bind \cm done_enter
+end
+
+function done_enter
+  if test -z (commandline)
+    ll
+    if git rev-parse --is-inside-work-tree > /dev/null 2>&1
+      echo
+      git status -sb
+    end
+  else
+    # 何か入力されているなら現在の入力を実行する
+    # eval (commandline) だとヒストリーに残らない
+    commandline -f execute
+  end
+  # 入力をクリアする
+  commandline -f repaint
+end
+
 
