@@ -1,4 +1,8 @@
 -- [[ Setting options ]]
+vim.cmd("language en_US")
+-- vim.cmd("autocmd!")
+vim.scriptencoding = "utf-8"
+
 -- See `:help vim.o`
 -- NOTE: You can change these options as you wish!
 
@@ -53,5 +57,7 @@ vim.o.autoread = true
 vim.o.incsearch = true
 vim.o.autoindent = true
 vim.o.laststatus = 2
-
+vim.o.cursorline = true
+vim.o.encoding = "utf-8"
+vim.o.fileencoding = "utf-8"
 vim.cmd("set t_Co=256")

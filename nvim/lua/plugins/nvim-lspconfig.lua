@@ -51,27 +51,6 @@ return {
       root_dir = lspconfig.util.root_pattern("package.json"),
     }
 
-    -- Deno
-    lspconfig.denols.setup {
-      capabilities = capabilities,
-      on_attach = on_attach,
-      root_dir = lspconfig.util.root_pattern("deno.json"),
-      init_options = {
-        lint = true,
-        unstable = true,
-        suggest = {
-          imports = {
-            hosts = {
-              ["https://deno.land"] = true,
-              ["https://cdn.nest.land"] = true,
-              ["https://crux.land"] = true,
-            },
-          },
-        },
-      },
-    }
-
-
     require('neodev').setup()
     -- Lua
     lspconfig.lua_ls.setup {
@@ -84,12 +63,6 @@ return {
           }
         }
       }
-    }
-
-    -- Go
-    lspconfig.gopls.setup {
-      capabilities = capabilities,
-      -- on_attach = on_attach,
     }
 
     -- Use LspAttach autocommand to only map the following keys
