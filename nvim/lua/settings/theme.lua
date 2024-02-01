@@ -14,3 +14,4 @@ local autocmd = vim.api.nvim_create_autocmd -- Create autocommand
 -- vim.cmd("colorscheme beekai")
 vim.cmd[[colorscheme tokyonight-moon]]
 vim.cmd[[AirlineTheme hybrid]]
+vim.opt.fillchars = {eob = " "}
