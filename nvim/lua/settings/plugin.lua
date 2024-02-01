@@ -12,29 +12,33 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-  "williamboman/mason.nvim",
+  {
+    'williamboman/mason.nvim',
+  },
   "williamboman/mason-lspconfig.nvim",
   "neovim/nvim-lspconfig",
   "hrsh7th/cmp-nvim-lsp",
   --	"hrsh7th/cmp-buffer",
   --	"hrsh7th/cmp-path",
   --	"hrsh7th/cmp-cmdline",
-  "hrsh7th/nvim-cmp",
+  {
+    'hrsh7th/nvim-cmp',
+  },
   "hrsh7th/cmp-vsnip",
   "hrsh7th/vim-vsnip",
   "folke/neoconf.nvim",
-  'flazz/vim-colorschemes',
   {
     "folke/tokyonight.nvim",
     lazy = false,
     priority = 1000,
     opts = {},
+    config = function()
+      vim.cmd[[colorscheme tokyonight-moon]]
+    end,
   },
-  'vim-airline/vim-airline',
-  'vim-airline/vim-airline-themes',
-  -- lazy.nvim
   {
     "folke/noice.nvim",
+    lazy=true,
     event = "VeryLazy",
     opts = {
       -- add any options here
@@ -50,6 +54,13 @@ require("lazy").setup({
   },
   {
     "nvim-neo-tree/neo-tree.nvim",
+    lazy = true,
+    --    keys = {
+    --      { "<C-S-f>", "<cmd>Neotree toggle<cr>" }
+    --    },
+    cmd = {
+      "Neotree"
+    },
     branch = "v3.x",
     dependencies = {
       "nvim-lua/plenary.nvim",
@@ -58,5 +69,6 @@ require("lazy").setup({
       -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
     }
   },
+  "dstein64/vim-startuptime",
 })
 

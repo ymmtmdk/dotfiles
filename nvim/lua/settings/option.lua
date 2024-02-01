@@ -3,7 +3,7 @@ local options = {
   fileencoding = "utf-8",
   title = true,
   backup = false,
-  -- clipboard = "unnamedplus",
+  clipboard = "unnamedplus",
   cmdheight = 2,
   --	completeopt = { "menuone", "noselect" },
   conceallevel = 0,
@@ -38,6 +38,7 @@ local options = {
 }
 
 vim.opt.shortmess:append("c")
+vim.opt.fillchars = {eob = " "}
 
 for k, v in pairs(options) do
   vim.opt[k] = v
