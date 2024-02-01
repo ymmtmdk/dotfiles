@@ -12,6 +12,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+  "folke/neoconf.nvim",
   {
     'williamboman/mason.nvim',
     lazy = true,
@@ -34,10 +35,11 @@ require("lazy").setup({
     'hrsh7th/nvim-cmp',
     lazy = true,
     event = "InsertEnter",
+    dependencies = {
+      "hrsh7th/cmp-vsnip",
+      "hrsh7th/vim-vsnip",
+    }
   },
-  "hrsh7th/cmp-vsnip",
-  "hrsh7th/vim-vsnip",
-  "folke/neoconf.nvim",
   {
     "folke/tokyonight.nvim",
     lazy = false,
@@ -66,12 +68,7 @@ require("lazy").setup({
   {
     "nvim-neo-tree/neo-tree.nvim",
     lazy = true,
-    --    keys = {
-    --      { "<C-S-f>", "<cmd>Neotree toggle<cr>" }
-    --    },
-    cmd = {
-      "Neotree"
-    },
+    cmd = { "Neotree" },
     branch = "v3.x",
     dependencies = {
       "nvim-lua/plenary.nvim",

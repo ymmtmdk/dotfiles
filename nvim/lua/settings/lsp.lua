@@ -25,24 +25,22 @@ require('mason-lspconfig').setup_handlers({
       vim.lsp.protocol.make_client_capabilities()
       )
     }
+    if server == "volar" then
+      opt.filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'}
+    end
+    if server == "lua_ls" then
+      opt.settings = {
+        Lua = {
+          diagnostics = {
+            -- Get the language server to recognize the `vim` global
+            globals = {'vim'},
+          },
+        },
+      }
+    end
     require('lspconfig')[server].setup(opt)
   end
 })
-
-require'lspconfig'.lua_ls.setup{
-  settings = {
-    Lua = {
-      diagnostics = {
-        -- Get the language server to recognize the `vim` global
-        globals = {'vim'},
-      },
-    },
-  },
-}
-
-require'lspconfig'.volar.setup{
-  filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'}
-}
 
 -- 2. completion (hrsh7th/nvim-cmp)
 local cmp = require("cmp")
