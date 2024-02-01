@@ -23,6 +23,6 @@ format = '[[ $symbol $branch ](fg:#769ff0 bg:#394260)]($style)'
 [git_status]
 style = "bg:#394260"
 format = '[[($all_status$ahead_behind )](fg:#769ff0 bg:#394260)]($style)'
-ahead = '[ ⇡$count](fg:#dddddd bg:#ff3300)'
-modified = '[ !$count](fg:#dddddd bg:#33ff00)'
-staged = '[ +$count](fg:#dddddd bg:#3300ff)'
+modified = '[!$count](fg:#cccccc bg:#aa3333)'
+ahead = '[⇡$count](fg:#cccccc bg:#33aa33)'
+staged = '[+$count](fg:#cccccc bg:#3333aa)'
