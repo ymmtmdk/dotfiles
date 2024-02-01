@@ -2,12 +2,16 @@ set -x TERM xterm-256color
 set -x EDITOR (which nvim)
 set -x SHELL (which fish)
 
-set -g theme_display_git_untracked yes
-set -g theme_avoid_ambiguous_glyphs yes
+# set -g theme_display_git_untracked yes
+# set -g theme_avoid_ambiguous_glyphs yes
 set -g fish_user_paths "/usr/local/opt/ruby/bin" $fish_user_paths
 
 source ~/dotfiles/fish/aliases.fish
 source ~/dotfiles/fish/each_arch.fish
+
+starship init fish | source
+
+source /Users/ymmtmdk/.local/share/nvim/lazy/tokyonight.nvim/extras/fish/tokyonight_moon.fish
 
 function fish_user_key_bindings
   # C-^

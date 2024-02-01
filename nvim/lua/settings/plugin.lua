@@ -24,5 +24,13 @@ require("lazy").setup({
   "hrsh7th/vim-vsnip",
   "folke/neoconf.nvim",
   'flazz/vim-colorschemes',
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
+  },
+  'vim-airline/vim-airline',
+  'vim-airline/vim-airline-themes',
 })
 
