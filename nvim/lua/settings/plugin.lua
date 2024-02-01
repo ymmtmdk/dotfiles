@@ -14,6 +14,14 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   {
     'williamboman/mason.nvim',
+    cmd = {
+      "Mason",
+      "MasonInstall",
+      "MasonUninstall",
+      "MasonUninstallAll",
+      "MasonLog",
+      "MasonUpdate",
+    },
   },
   "williamboman/mason-lspconfig.nvim",
   "neovim/nvim-lspconfig",
@@ -23,6 +31,8 @@ require("lazy").setup({
   --	"hrsh7th/cmp-cmdline",
   {
     'hrsh7th/nvim-cmp',
+    lazy = true,
+    event = "InsertEnter",
   },
   "hrsh7th/cmp-vsnip",
   "hrsh7th/vim-vsnip",
@@ -38,7 +48,7 @@ require("lazy").setup({
   },
   {
     "folke/noice.nvim",
-    lazy=true,
+    lazy = true,
     event = "VeryLazy",
     opts = {
       -- add any options here

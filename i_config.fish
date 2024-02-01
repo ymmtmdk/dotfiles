@@ -1,6 +1,7 @@
 set -x TERM xterm-256color
 set -x EDITOR (which nvim)
 set -x SHELL (which fish)
+set --universal nvm_default_version latest
 
 # set -g theme_display_git_untracked yes
 # set -g theme_avoid_ambiguous_glyphs yes
@@ -51,6 +52,7 @@ function current_info
     if git rev-parse --is-inside-work-tree > /dev/null 2>&1
       echo
       git status -sb
+      echo
       echo
     end
   else
