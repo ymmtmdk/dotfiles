@@ -44,11 +44,12 @@ return {
     })
 
     -- TypeScript
-    lspconfig.tsserver.setup {
+    lspconfig.volar.setup {
       capabilities = capabilities,
       on_attach = on_attach,
       single_file_support = false,
       root_dir = lspconfig.util.root_pattern("package.json"),
+      filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json' }
     }
 
     require('neodev').setup()

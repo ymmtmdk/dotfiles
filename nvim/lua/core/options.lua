@@ -61,3 +61,6 @@ vim.o.cursorline = true
 vim.o.encoding = "utf-8"
 vim.o.fileencoding = "utf-8"
 vim.cmd("set t_Co=256")
+vim.opt.termguicolors = true
+vim.opt.winblend = 0
+vim.opt.pumblend = 0
