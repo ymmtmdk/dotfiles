@@ -14,6 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   {
     'williamboman/mason.nvim',
+    lazy = true,
     cmd = {
       "Mason",
       "MasonInstall",
