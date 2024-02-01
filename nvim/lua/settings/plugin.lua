@@ -26,7 +26,9 @@ require("lazy").setup({
     },
   },
   "williamboman/mason-lspconfig.nvim",
-  "neovim/nvim-lspconfig",
+  {
+    "neovim/nvim-lspconfig",
+  },
   "hrsh7th/cmp-nvim-lsp",
   --	"hrsh7th/cmp-buffer",
   --	"hrsh7th/cmp-path",
@@ -46,6 +48,13 @@ require("lazy").setup({
     priority = 1000,
     opts = {},
     config = function()
+      require("tokyonight").setup({
+        transparent = true,
+        styles = {
+          sidebars = "transparent",
+          floats = "transparent",
+        },
+      })
       vim.cmd[[colorscheme tokyonight-moon]]
     end,
   },
