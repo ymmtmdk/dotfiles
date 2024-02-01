@@ -21,6 +21,3 @@ keymap("n", "<F17>", "5gt", opts)
 keymap("n", "<C-t>", ":tabnew<Space>", {})
 keymap("n", "<C-S-f>", ":Neotree toggle<Return>", opts)
 
--- nnoremap <C-t> :tabnew<Space>
--- nnoremap <silent> <F13> 1gt
--- nnoremap <silent> <F14> 2gt

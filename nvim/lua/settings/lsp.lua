@@ -25,6 +25,7 @@ require('mason-lspconfig').setup_handlers({
       vim.lsp.protocol.make_client_capabilities()
       )
     }
+    -- each servers
     if server == "volar" then
       opt.filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'}
     end
