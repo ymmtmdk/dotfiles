@@ -16,6 +16,3 @@ local opts = { noremap = true }
 --   term_mode = "t",
 --   command_mode = "c",
 
--- for US keyboard
-vim.keymap.set('n', ';', ':', opts)
-vim.keymap.set('n', ':', ';', opts)

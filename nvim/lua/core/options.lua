@@ -41,7 +41,7 @@ vim.o.timeoutlen = 300
 vim.o.termguicolors = true
 
 -- vim doc ja
-vim.o.helplang = 'ja,en'
+vim.o.helplang = 'en'
 
 -- tab
 vim.o.expandtab = true
