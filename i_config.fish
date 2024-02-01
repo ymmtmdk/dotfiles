@@ -51,6 +51,7 @@ function current_info
     if git rev-parse --is-inside-work-tree > /dev/null 2>&1
       echo
       git status -sb
+      echo
     end
   else
     # 何か入力されているなら現在の入力を実行する
