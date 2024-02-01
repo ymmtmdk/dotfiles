@@ -4,10 +4,14 @@ return {
     { 'hrsh7th/cmp-nvim-lsp' },
     { "lukas-reineke/lsp-format.nvim" },
     { 'folke/neodev.nvim' },
+    { "williamboman/mason.nvim" },
+    { "williamboman/mason-lspconfig.nvim" },
   },
   cmd = { 'LspInfo', 'LspInstall', 'LspStart' },
   event = { 'BufReadPre', 'BufNewFile' },
   config = function()
+    require("mason").setup()
+    require("mason-lspconfig").setup()
     local lspconfig = require('lspconfig')
     -- The nvim-cmp almost supports LSP's capabilities so You should advertise it to LSP servers..
     local capabilities = require('cmp_nvim_lsp').default_capabilities()
