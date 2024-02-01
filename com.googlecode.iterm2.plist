@@ -720,8 +720,6 @@
 			</dict>
 			<key>Background Image Is Tiled</key>
 			<false/>
-			<key>Background Image Location</key>
-			<string>/Users/ymmtmdk/Downloads/Logo_brand_Adidas.png</string>
 			<key>Badge Color</key>
 			<dict>
 				<key>Alpha Component</key>
