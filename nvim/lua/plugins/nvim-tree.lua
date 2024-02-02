@@ -5,10 +5,18 @@ return {
     "nvim-tree/nvim-web-devicons",
   },
   config = function()
-    local nvimtree = require("nvim-tree")
+    local function my_on_attach(bufnr)
+      local api = require "nvim-tree.api"
 
-    -- configure nvim-tree
-    nvimtree.setup({
+      -- default mappings
+      api.config.mappings.default_on_attach(bufnr)
+
+      api.node.open.default_edit = api.node.open.edit
+      -- override defualt edit
+      api.node.open.edit = api.node.open.tab
+    end
+
+    require("nvim-tree").setup({
       view = {
         width = 38,
         relativenumber = false,
@@ -50,17 +58,7 @@ return {
       git = {
         ignore = false,
       },
+      on_attach = my_on_attach,
     })
-
-    -- set keymaps
-    vim.keymap.set("n", "<C-n>", "<cmd>NvimTreeFindFileToggle<CR>", { desc = "Toggle file explorer" }) -- toggle file explorer
-    vim.keymap.set(
-      "n",
-      "<leader>ef",
-      "<cmd>NvimTreeFindFileToggle<CR>",
-      { desc = "Toggle file explorer on current file" }
-    )                                                                                                   -- toggle file explorer on current file
-    vim.keymap.set("n", "<leader>ec", "<cmd>NvimTreeCollapse<CR>", { desc = "Collapse file explorer" }) -- collapse file explorer
-    vim.keymap.set("n", "<leader>er", "<cmd>NvimTreeRefresh<CR>", { desc = "Refresh file explorer" })   -- refresh file explorer
   end,
 }
