@@ -2,7 +2,7 @@ return {
   -- See `:help lualine.txt`
   -- Set lualine as statusline
   'nvim-lualine/lualine.nvim',
-  -- event = { "BufReadPre", "BufNewFile" },
+  event = { "BufReadPre", "BufNewFile" },
   config = function()
     -- Eviline config for lualine
     -- Author: shadmansaleh
@@ -86,7 +86,7 @@ return {
 
     ins_left {
       function()
-        return '▊'
+        return ''
       end,
       color = { fg = colors.blue },      -- Sets highlighting of component
       padding = { left = 0, right = 1 }, -- We don't need space before this
@@ -95,7 +95,7 @@ return {
     ins_left {
       -- mode component
       function()
-        return '(^-^)/'
+        return ''
       end,
       color = function()
         -- auto change color according to neovims mode
@@ -209,7 +209,7 @@ return {
 
     ins_right {
       function()
-        return '▊'
+        return ''
       end,
       color = { fg = colors.blue },
       padding = { left = 1 },
