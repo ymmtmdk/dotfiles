@@ -1,11 +1,6 @@
 set -x TERM xterm-256color
 set -x EDITOR (which nvim)
 set -x SHELL (which fish)
-set --universal nvm_default_version latest
-
-# set -g theme_display_git_untracked yes
-# set -g theme_avoid_ambiguous_glyphs yes
-set -g fish_user_paths "/usr/local/opt/ruby/bin" $fish_user_paths
 
 source ~/dotfiles/fish/aliases.fish
 source ~/dotfiles/fish/each_arch.fish
@@ -13,6 +8,11 @@ source ~/dotfiles/fish/each_arch.fish
 starship init fish | source
 
 source /Users/ymmtmdk/.local/share/nvim/lazy/tokyonight.nvim/extras/fish/tokyonight_moon.fish
+
+if set --query nvm_default_version && set --query nvm_current_version
+  _nvm_version_deactivate $nvm_current_version
+  nvm use --silent $nvm_default_version
+end
 
 function fish_user_key_bindings
   # C-^
@@ -66,8 +66,4 @@ end
 
 function fish_title
 end
-
-# function fish_prompt
-#      printf '%s' $PWD (fish_git_prompt) ' $ '
-# end
 

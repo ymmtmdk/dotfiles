@@ -13,3 +13,6 @@ set -gx PKG_CONFIG_PATH "/usr/local/opt/ruby/lib/pkgconfig"
 # set -gx XDG_DATA_HOME ~/.nvm
 # source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.inc"
 
+set --universal nvm_default_version v21.6.0
+set nvm_default_version v21.6.0
+
