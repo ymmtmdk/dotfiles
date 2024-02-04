@@ -31,30 +31,14 @@ function fish_user_key_bindings
   bind \cm current_info
 end
 
-# autocdz
-function autocdz
-  if test (count $argv) -gt 1
-    echo "fish: Unknown command '$argv[1]'" >&2
-  else if test -d $argv
-    cd $argv
-  else if __z $argv
-    echo cd $PWD
-  end
-end
-
-function __fish_command_not_found_handler --on-event fish_command_not_found
-  autocdz $argv
-end
-
 function current_info
   if test -z (commandline)
     ll
-    if git rev-parse --is-inside-work-tree > /dev/null 2>&1
-      echo
+    if test (git rev-parse --is-inside-work-tree 2> /dev/null || echo false) = true
       git status -sb
-      echo
-      echo
     end
+    echo
+    echo
   else
     # 何か入力されているなら現在の入力を実行する
     # eval (commandline) だとヒストリーに残らない
