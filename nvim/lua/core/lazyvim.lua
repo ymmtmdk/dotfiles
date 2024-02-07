@@ -26,6 +26,9 @@ local lazyOpts = {
   change_detection = {
     notify = false,
   },
+  dev = {
+    path = "~/github",
+  },
 }
 
 -- Any lua file in ~/.config/nvim/lua/plugins/*.lua will be automatically merged in the main plugin spec
