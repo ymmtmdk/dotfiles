@@ -7,7 +7,7 @@ source ~/dotfiles/fish/each_arch.fish
 
 starship init fish | source
 
-source /Users/ymmtmdk/.local/share/nvim/lazy/tokyonight.nvim/extras/fish/tokyonight_moon.fish
+source $HOME/.local/share/nvim/lazy/tokyonight.nvim/extras/fish/tokyonight_moon.fish
 
 if set --query nvm_default_version && set --query nvm_current_version
   _nvm_version_deactivate $nvm_current_version
