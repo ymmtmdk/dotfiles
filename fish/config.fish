@@ -16,6 +16,6 @@ set -gx CXXFLAGS "$CXXFLAGS -I/usr/local/include"
 # set -gx PKG_CONFIG_PATH "/usr/local/opt/ruby/lib/pkgconfig"
 
 if status is-interactive
-  source ~/dotfiles/i_config.fish
+  source ~/.config/fish/i_config.fish
 end
 

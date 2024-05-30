@@ -1,5 +1,5 @@
 -- [[ Setting options ]]
-vim.cmd("language en_US")
+-- vim.cmd("language en_US")
 -- vim.cmd("autocmd!")
 vim.scriptencoding = "utf-8"
 
