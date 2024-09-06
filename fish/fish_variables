@@ -1,6 +1,12 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
+SETUVAR Z_DATA:/home/madoka/\x2ez
 SETUVAR __fish_initialized:3400
+SETUVAR _fisher_jorgebucaran_2F_fisher_files:\x7e/\x2econfig/fish/functions/fisher\x2efish\x1e\x7e/\x2econfig/fish/completions/fisher\x2efish
+SETUVAR _fisher_plugins:jorgebucaran/fisher\x1eymmtmdk/z\x2drb\x1eymmtmdk/peco_select_history_with_c
+SETUVAR _fisher_upgraded_to_4_4:\x1d
+SETUVAR _fisher_ymmtmdk_2F_peco__select__history__with__c_files:\x7e/\x2econfig/fish/functions/peco_select_history_with_c\x2efish
+SETUVAR _fisher_ymmtmdk_2F_z_2D_rb_files:\x7e/\x2econfig/fish/functions/__z_add\x2efish\x1e\x7e/\x2econfig/fish/functions/__z_move\x2efish\x1e\x7e/\x2econfig/fish/functions/autocdz\x2efish\x1e\x7e/\x2econfig/fish/functions/Rakefile\x1e\x7e/\x2econfig/fish/functions/uninstall\x2efish\x1e\x7e/\x2econfig/fish/functions/z\x2eawk\x1e\x7e/\x2econfig/fish/functions/zadd\x2eawk\x1e\x7e/\x2econfig/fish/functions/zadd\x2ecr\x1e\x7e/\x2econfig/fish/functions/zadd\x2erb\x1e\x7e/\x2econfig/fish/functions/zmove\x2ecr\x1e\x7e/\x2econfig/fish/functions/zmove\x2erb\x1e\x7e/\x2econfig/fish/conf\x2ed/z\x2efish
 SETUVAR fish_color_autosuggestion:brblack
 SETUVAR fish_color_cancel:\x2dr
 SETUVAR fish_color_command:blue

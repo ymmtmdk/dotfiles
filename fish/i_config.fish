@@ -2,8 +2,8 @@ set -x TERM xterm-256color
 set -x EDITOR (which nvim)
 set -x SHELL (which fish)
 
-source ~/dotfiles/fish/aliases.fish
-source ~/dotfiles/fish/each_arch.fish
+source ~/.config/fish/aliases.fish
+source ~/.config/fish/each_arch.fish
 
 starship init fish | source
 
