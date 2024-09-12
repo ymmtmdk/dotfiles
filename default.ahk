@@ -15,3 +15,5 @@ SC079::Shift
 ^9::F21
 ^0::F22
 
+; ^h::Backspace
+
